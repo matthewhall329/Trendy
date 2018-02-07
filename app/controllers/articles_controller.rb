@@ -13,8 +13,7 @@ class ArticlesController < ApplicationController
     end
     
     def create 
-      @article = Article.new(article_params)
-      @article.user = User.first
+      @article = Article.new(article_params) 
       if @article.save 
         #do somthing 
         flash[:success] = "article was succesfully created"
@@ -31,8 +30,8 @@ class ArticlesController < ApplicationController
        redirect_to article_path(@article)
    else 
      render 'edit'
-     end
-   end   
+   end
+ end   
     
     
     def show 
